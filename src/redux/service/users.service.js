@@ -1,5 +1,5 @@
-import {addDoc, collection, deleteDoc, doc, getDocs, query, updateDoc} from "firebase/firestore";
-import {db} from "../../firebaseConfig";
+import { addDoc, collection, deleteDoc, doc, getDocs, query, updateDoc } from "firebase/firestore";
+import { db } from "../../firebaseConfig";
 
 export const getUserFromFirebase = async () => {
     let ref = collection(db, "users")
@@ -41,7 +41,7 @@ export const deleteUserFromFireBase = async (data) => {
 }
 
 
-export const updateUserFromFireBase = async (id,data) => {
+export const updateUserFromFireBase = async (id, data) => {
     try {
         let ref = doc(db, "users", id)
         await updateDoc(ref, data);
